@@ -1,0 +1,85 @@
+<div class="row">
+    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+      <div id="cards" class="bg-gradient-custom animate__animated animate__fadeInLeft animate__slow">
+        <div class="cardholder">
+          <div class="card-1 animate__animated animate__backInLeft animate__slow">
+            <div class="container p-4 h-100">
+              <div class="card-logo">
+                <img src="../../../assets/images/interactive-card-details-form/card-logo.svg" alt="">
+              </div>
+              <div class="card-content">
+                <h3 class="card-number">9591 6489 6389 101E</h3>
+              </div>
+              <div class="card-holder">
+                <div class="d-flex justify-content-between">
+                  <div class="card-name">
+                    <span>Steven Spilberg</span>
+                  </div>
+                  <div class="card-expiry">
+                    <span>08/22</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-2 animated backInLeft animate__slower">
+            <div class="cvv">
+              <span>000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+      <div class="container">
+        <div class="form">
+          <form action="javascript:void(0)" method="post">
+            <div class="form-group animate__animated animate__backInRight">
+              <label for="name">Cardholder Name</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="e.g. Steven Spilberg" value="">
+            </div>
+            <div class="form-group animate__animated animate__backInRight animate__delay-1s">
+              <label for="email">Card Number</label>
+              <input type="text" class="form-control form-invalid" maxlength="19" name="cc-number" placeholder="9591 6489 6389 1010" value="9591 6489 6389 101E">
+              <span class="text-warn">Wrong format, numbers only</span>
+            </div>
+            <div class="form-group animate__animated animate__backInRight animate__delay-2s">
+              <div class="d-flex">
+                <div class="col-6 pe-2">
+                  <label for="expiry">Exp. Date (MM/YY)</label>
+                  <div class="d-flex">
+                    <div class="col-6 pe-2">
+                      <input type="text" class="form-control" id="expiry" name="expiry" placeholder="MM" value="" maxlength="2">
+                      <span class="text-warn">Can't be blank</span>
+                    </div>
+                    <div class="col-6">
+                      <input type="text" class="form-control form-invalid" id="cvc" name="cvc" placeholder="YY" maxlength="2">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <label for="address">CVC</label>
+                  <input type="password" class="form-control form-invalid" id="cvc" name="cvc" placeholder="876" maxlength="3">
+                  <span class="text-warn">Can't be blank</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="d-grid mt-2 animate__animated animate__backInRight animate__delay-3s">
+              <a class="btn btn-primary" type="submit">Confirm</a>
+            </div>
+            
+            <div class="success-screen">
+              <p>Thank you! We've added your card details</p>
+              <button class="btn btn-primary">Continue</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="attribution px-5 w-100 animate__animated animate__bounceInUp animate__delay-3s">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/ignaciocorball/frontendmentor-challenges/junior/interactive-card-details-form">Arcturian.dev</a>.
+  </div>
