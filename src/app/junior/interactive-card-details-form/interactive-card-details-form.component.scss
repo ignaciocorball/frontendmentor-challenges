@@ -23,7 +23,9 @@ body {
   min-height: 450px;
   height: 100vh;
   margin: 0;
-  overflow-x: hidden;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .bg-gradient-custom {
@@ -42,7 +44,8 @@ body {
 
 .cardholder {
   position: absolute;
-  top: 25%;
+  top: 15%;
+  right: 0;
 
   span {
     font-family: 'Space Grotesk', sans-serif;
@@ -87,7 +90,7 @@ body {
     line-height: 215px;
     margin-top: 2rem;
     border-radius: 10px;
-    margin-left: 50%;
+    margin-left: 60%;
     text-align: right;
     padding-right: 55px;
     color: $font-white;
@@ -99,7 +102,7 @@ body {
 
 .form {
   position: relative;
-  margin: 25%;
+  margin: 25% 15% 15% 30%;
   max-width: 400px;
 
   label {
@@ -108,6 +111,7 @@ body {
     margin-bottom: 0.5rem;
     text-transform: uppercase;
     font-weight: 500;
+    letter-spacing: 0.1rem;
   }
 
   input {
@@ -144,11 +148,28 @@ body {
     font-size: 1rem;
     padding: 10px;
   }
+
 }
 
 .success-screen {
   display: none;
-}
+  text-align: center;
+
+  img{
+    margin-bottom: 20px;
+  }
+  h3{
+    color: $font-very-dark-violet;
+  }
+  p{
+    color: $font-dark-grayish-violet;
+  }
+  button{
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+  }
+} 
 
 .attribution {
   color: $font-dark-grayish-violet;
@@ -164,7 +185,33 @@ body {
   }
 } 
 
-@media only screen and (max-width: 1235px) {
+/* Cards floating animation */
+.bounce-1 {
+  animation-name: bounce-1;
+  animation-timing-function: linear;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+@keyframes bounce-1 {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+.bounce-2 {
+  animation-name: bounce-1;
+  animation-timing-function: linear;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+@keyframes bounce-2 {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(10px); }
+    100% { transform: translateY(0); }
+}
+
+
+/* Media Queries */
+@media only screen and (max-width: 600px) {
   .bg-gradient-custom {
     position: relative;
     background-image: url('../../../assets/images/interactive-card-details-form/bg-main-mobile.png');
@@ -174,18 +221,10 @@ body {
 
   .cardholder {
     position: absolute;
-    top: 5%;
-
-    .card-content {
-      padding-top: 1.5rem;
-    }
+    right: auto;
 
     span {
       font-size: 0.7rem;
-    }
-
-    h3 {
-      font-size: 14px;
     }
 
     .card-1 {
@@ -197,6 +236,11 @@ body {
       z-index: 1;
       margin-left: 10%;
       margin-top: 30%;
+
+      .card-number{
+        margin-top: 10px;
+        font-size:1rem;
+      }
     }
 
     .card-2 {
