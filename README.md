@@ -1,27 +1,28 @@
-# FrontendmentorChallenges
+# Frontendmentor Challenges
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.18.
 
-## Development server
+## Getting Started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Installation
 
-## Code scaffolding
+```bash
+git clone https://github.com/ignaciocorball/frontendmentor-challenges.git
+npm install
+ng serve
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Navigation
 
-## Build
+All levels finished are available at `src/app/*`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+You can navigate using router links on `src/app/app-routing.module.ts`
 
-## Running unit tests
+### Usage example
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Index & Router links
+Navigate to `http://localhost:4200/`
 
-## Running end-to-end tests
+Example
+Navigate to `http://localhost:4200/challenges/level-2/interactive-card-details-form`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
