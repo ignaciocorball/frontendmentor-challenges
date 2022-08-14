@@ -20,9 +20,10 @@ You can navigate using router links on `src/app/app-routing.module.ts`
 
 ### Usage example
 
-Index & Router links
+Homepage:  
+
 Navigate to `http://localhost:4200/`
 
-Example
+Example  
 Navigate to `http://localhost:4200/challenges/level-2/interactive-card-details-form`
 
