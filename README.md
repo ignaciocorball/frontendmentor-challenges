@@ -14,16 +14,14 @@ ng serve
 
 ### Navigation
 
-All levels finished are available at `src/app/*`
+All levels completed are available at `src/app/*`
 
 You can navigate using router links on `src/app/app-routing.module.ts`
 
 ### Usage example
 
-Homepage:  
-
 Navigate to `http://localhost:4200/`
 
-Example  
-Navigate to `http://localhost:4200/challenges/level-2/interactive-card-details-form`
+Or
 
+Specific route `http://localhost:4200/challenges/level-2/interactive-card-details-form`
