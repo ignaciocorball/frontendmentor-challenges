@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
 
 // Challenges Levels
 
@@ -16,12 +17,11 @@ import { ExpensesChartComponentComponent } from './junior/expenses-chart-compone
 
 const routes: Routes = [
   
-  {path: '', redirectTo: 'challenges/level-2/interactive-card-details-form', pathMatch: 'full' },
+  {path: '', redirectTo: 'home', pathMatch: 'full' },
+  {path: 'home', component: HomeComponent},
 
-  {
+    {
       path: 'challenges', component: AppComponent, children: [
-        {path: 'home', component: AppComponent},
-
         {path: 'level-1', children: [
           {path: 'qr-code-component', component: QrCodeComponentComponent},
         ]},
@@ -32,11 +32,10 @@ const routes: Routes = [
         {path: 'level-3', children: [
 
         ]},
-
       ]
     },
       
-    {path: '**', component: AppComponent}
+    {path: '**', component: HomeComponent}
 
 ];
 

@@ -10,8 +10,6 @@ $font-dark-grayish-violet: hsl(279, 6%, 55%);
 $font-very-dark-violet: hsl(278, 68%, 11%);
 $font-red:hsl(0, 100%, 66%);
 
-
-
 *{
   font-family: 'Space Grotesk', sans-serif;
   font-weight: normal;
@@ -102,7 +100,7 @@ body {
 
 .form {
   position: relative;
-  margin: 25% 15% 15% 30%;
+  margin: 20% 15% 15% 30%;
   max-width: 400px;
 
   label {
