@@ -11,6 +11,7 @@ import { QrCodeComponentComponent } from './newbie/qr-code-component/qr-code-com
 // Junior (Lavel 2)
 import { InteractiveCardDetailsFormComponent } from './junior/interactive-card-details-form/interactive-card-details-form.component';
 import { ExpensesChartComponentComponent } from './junior/expenses-chart-component/expenses-chart-component.component';
+import { BlogrLandingPageComponent } from './junior/blogr-landing-page/blogr-landing-page.component';
 
 // Intermediate (Level 3)
 
@@ -27,7 +28,8 @@ const routes: Routes = [
         ]},
         {path: 'level-2', children: [
           {path: 'interactive-card-details-form', component: InteractiveCardDetailsFormComponent},
-          {path: 'expenses-chart-component', component: ExpensesChartComponentComponent}
+          {path: 'expenses-chart-component', component: ExpensesChartComponentComponent},
+          {path: 'blogr-landing-page', component: BlogrLandingPageComponent},
         ]},
         {path: 'level-3', children: [
 

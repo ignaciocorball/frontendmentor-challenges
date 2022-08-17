@@ -2,7 +2,7 @@
     <div class="navbar">
         <div class="navbar-wrap">
             <a class="logo">
-                <img src="../../assets/logo.svg" alt="Arcturian dev logo" width="40">
+                <img src="../../assets/images/logo_lined.svg" alt="Arcturian dev logo" width="50">
             </a>
             <nav>
                 <ul>
@@ -11,21 +11,9 @@
                     <li><a href="javascript:void(0)" (click)="scrollToBottom()">Skillsets</a></li>
                     <li><a href="#">Projects</a></li>
                     <li><a href="#">Concepts</a></li>
-                    <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
-            <a (click)="toggleTheme()" class="switch-box">
-                <label class="switch">
-                    <input id="toggle-theme" class="switch__input" type="checkbox" [checked]="true">
-                    <span class="switch__background">
-                        <span class="switch__toggle">
-                            <span class="switch__moon"></span>
-                        </span>
-                        <span class="switch__stars"></span>
-                        <span class="switch__clouds"></span>
-                    </span>
-                </label>
-            </a>
+            <a (click)="toggleTheme()" class="btn btn-outline-primary">Contact</a>
         </div>
     </div>
 </header>
@@ -61,11 +49,11 @@
                         <fa-icon [icon]="faGithub" style="font-size: 1.5rem"></fa-icon>
                     </a>
                     <a target="__blank" aria-label="twitter" title="twitter" href="//twitter.com/ignaciocorball"
-                        class="color_1">
+                        class="color_1 ms-5">
                         <fa-icon [icon]="faTwitter" style="font-size: 1.5rem"></fa-icon>
                     </a>
                     <a target="__blank" aria-label="codepen" title="codepen" href="//codepen.io/ignaciocorball"
-                        class="color_1">
+                        class="color_1 ms-5">
                         <fa-icon [icon]="faCodepen" style="font-size: 1.5rem"></fa-icon>
                     </a>
                 </div>
@@ -73,10 +61,10 @@
         </div>
         <div class="home-card">
             <div class="card-body">
-                <pre>1&nbsp;&nbsp;class <b>Developer</b> <!-- -->{{ '{' }} </pre>
+                <pre>1&nbsp;&nbsp;class <b>Portfolio</b> <!-- -->{{ '{' }} </pre>
                 <pre>2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; constructor()  {{ '{' }} </pre>
                 <pre>3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.name = "<b>Ignacio Corball</b>";</pre>
-                <pre>4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.skills = ["<b>SCSS</b>", "<b>ANGULAR</b>", "<b>FIGMA</b>"];</pre>
+                <pre>4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.stack = ["<b>SCSS</b>", "<b>ANGULAR</b>", "<b>TS</b>"];</pre>
                 <pre>5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.type = "<b>Frontend</b>"; </pre>
                 <pre>6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.age = new Date().getFullYear() - 1997; </pre>
                 <pre>7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</pre>
@@ -130,7 +118,7 @@
         </div>
         <div class="parallax-outer">
             <div class="parallax-inner" style="transform: translate3d(0%, -333px, 0px);">
-                <p *ngFor="let element of labels"
+                <p *ngFor="let element of techBrands"
                     [ngStyle]="{'top':element.top, 'left':element.left,'font-size':element.fs}"> {{ element.name }}</p>
             </div>
         </div>
@@ -138,23 +126,33 @@
 
     <section class="carousel">
         <div class="carousel-bg"></div>
+        
         <div class="carousel-container">
-            <h3>Some frontendmentor projects</h3>
-            <swiper 
-                [slidesPerView]="'auto'" 
-                [centeredSlides]="false" 
-                [spaceBetween]="30"
-                [pagination]="{ clickable: true }" 
-                class="mySwiper">
-
-                <ng-template swiperSlide *ngFor="let element of limitedProjects">
-                    <div class="overlay" [routerLink]="element.link">
-                        <div class="level">{{element.level}}</div>
+            <!-- Swiper attributes -->
+            <!-- [pagination]="pagination" -->
+            <swiper  
+                #swiperChallenges
+                [slidesPerView]="'auto'"
+                [spaceBetween]="20"
+                [loop]="true"
+                class="mySwiper"
+                (swiper)="setSwiperInstance($event)"
+                >
+                <ng-template swiperSlide *ngFor="let element of carouselProjects">
+                    <div class="" [routerLink]="element.link"> </div>
+                    <img src="../../{{ element.image }}" alt="">
+                    <div class="overlay-text" [routerLink]="element.link">
+                        <!--<a class="{{ element.icon }}"></a> -->
+                        <h3>{{ element.title }}</h3>
+                        <p *ngIf="element.level == 1">Dificultad: [ <a class="level-1">{{element.level}}</a> ]</p>
+                        <p *ngIf="element.level == 2">Dificultad: [ <a class="level-2">{{element.level}}</a> ]</p>
+                        <p *ngIf="element.level == 3">Dificultad: [ <a class="level-3">{{element.level}}</a> ]</p>
+                        <p *ngIf="element.level == 4">Dificultad: [ <a class="level-4">{{element.level}}</a> ]</p>
+                        <p *ngIf="element.level == 5">Dificultad: [ <a class="level-5">{{element.level}}</a> ]</p>
                     </div>
-                    <img src="../../{{element.image}}" alt="">
-                    <p [routerLink]="element.link">{{element.tittle}}</p>
                 </ng-template>
             </swiper>
+            <p class="carousel-engine">powered by swiperjs</p>
         </div>
     </section>
 

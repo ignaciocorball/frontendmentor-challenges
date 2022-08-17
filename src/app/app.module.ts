@@ -13,6 +13,7 @@ import { ExpensesChartComponentComponent } from './junior/expenses-chart-compone
 import { QrCodeComponentComponent } from './newbie/qr-code-component/qr-code-component.component';
 import { NewComponentComponent } from './newbie/new-component/new-component.component';
 import { HomeComponent } from './home/home.component';
+import { BlogrLandingPageComponent } from './junior/blogr-landing-page/blogr-landing-page.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HomeComponent } from './home/home.component';
     ExpensesChartComponentComponent,
     QrCodeComponentComponent,
     NewComponentComponent,
-    HomeComponent
+    HomeComponent,
+    BlogrLandingPageComponent
   ],
   imports: [
     BrowserModule,
