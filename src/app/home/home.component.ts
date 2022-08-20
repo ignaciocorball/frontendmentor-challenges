@@ -61,7 +61,7 @@ export class HomeComponent implements OnInit {
       level:'2'
     },
     { 
-      title:'Magma glitched tasklist app', 
+      title:'Tasklist magma glitched', 
       image:'assets/images/tasklist/guide/desktop-preview.png',
       icon: '', 
       link:'/challenges/level-3/tasklist-app', 

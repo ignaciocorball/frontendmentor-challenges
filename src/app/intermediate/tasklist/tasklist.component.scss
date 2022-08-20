@@ -42,10 +42,11 @@ h4 {
 
 section{
     background: url('../../../assets/images/tasklist/background.png') no-repeat center / cover;
+    height: 1080px;
     canvas{
       position: absolute;
       width: 100%;
-      height: 100%;
+      height: 1080px;
     }
 }
 

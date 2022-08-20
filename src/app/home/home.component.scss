@@ -93,6 +93,7 @@ body,html{
             flex-basis: 100px;
             max-width: 50px;
             margin-bottom: 10px;
+            user-select: none;
         }
     }
 }
@@ -117,6 +118,7 @@ main{
             top: 50px;
             right: 0px;
             z-index: -1;
+            user-select: none;
         }
     
         .home-text{
@@ -461,6 +463,7 @@ main{
                 height: 100%;
                 object-fit: cover;
                 border-radius: 15px;
+                user-select: none;
               }
               .overlay-text{
                 position: absolute;

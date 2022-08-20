@@ -80,35 +80,38 @@
         </div>
     </section>
 
-    <h2 class="title-2">Things I love <fa-icon [icon]="faHeart" style="font-size: 1.5rem; color: #F43962"></fa-icon>
-    </h2>
-    <div class="card-holder">
-        <div class="card-skills bounce-1">
-            <div class="icon">
-                <fa-icon class="icon-fa-skills" [icon]="faCode"></fa-icon>
+    <section class="things-i-love">
+        <h2 class="title-2">Things I love <fa-icon [icon]="faHeart" style="font-size: 1.5rem; color: #F43962"></fa-icon>
+        </h2>
+        <div class="card-holder">
+            <div class="card-skills bounce-1">
+                <div class="icon">
+                    <fa-icon class="icon-fa-skills" [icon]="faCode"></fa-icon>
+                </div>
+                <h3>FrontEnd</h3>
+                <p>I'm more front end focused and love to work with Angular as well as pure HTML and SCSS.</p>
             </div>
-            <h3>FrontEnd</h3>
-            <p>I'm more front end focused and love to work with Angular as well as pure HTML and SCSS.</p>
-        </div>
-        <div class="card-skills bounce-2">
-            <div class="icon">
-                <fa-icon class="icon-fa-skills" [icon]="faJs"></fa-icon>
+            <div class="card-skills bounce-2">
+                <div class="icon">
+                    <fa-icon class="icon-fa-skills" [icon]="faJs"></fa-icon>
+                </div>
+                <h3>Javascript</h3>
+                <p>I just extremely love javascript, I can’t even express how much I love javascript with just a few
+                    lines.
+                </p>
             </div>
-            <h3>Javascript</h3>
-            <p>I just extremely love javascript, I can’t even express how much I love javascript with just a few lines.
-            </p>
-        </div>
-        <div class="card-skills bounce-3">
-            <div class="icon">
-                <fa-icon class="icon-fa-skills" [icon]="faPaintBrush"></fa-icon>
+            <div class="card-skills bounce-3">
+                <div class="icon">
+                    <fa-icon class="icon-fa-skills" [icon]="faPaintBrush"></fa-icon>
+                </div>
+                <h3>Creative Coding</h3>
+                <p>I love creative coding because I do both coding & designing. making beautiful art with code is very
+                    satisfying to me.</p>
             </div>
-            <h3>Creative Coding</h3>
-            <p>I love creative coding because I do both coding & designing. making beautiful art with code is very
-                satisfying to me.</p>
         </div>
-    </div>
+    </section>
 
-    <section class="skillset" id="skillsetSection" #skillsetSection>
+    <section class="skillset">
         <h2>Project Skillsets</h2>
         <div class="skill-icons">
             <fa-icon [icon]="faAngular"></fa-icon>
@@ -126,18 +129,12 @@
 
     <section class="carousel">
         <div class="carousel-bg"></div>
-        
+
         <div class="carousel-container">
             <!-- Swiper attributes -->
             <!-- [pagination]="pagination" -->
-            <swiper  
-                #swiperChallenges
-                [slidesPerView]="'auto'"
-                [spaceBetween]="20"
-                [loop]="true"
-                class="mySwiper"
-                (swiper)="setSwiperInstance($event)"
-                >
+            <swiper #swiperChallenges [slidesPerView]="'auto'" [spaceBetween]="20" [loop]="true" class="mySwiper"
+                (swiper)="setSwiperInstance($event)">
                 <ng-template swiperSlide *ngFor="let element of carouselProjects">
                     <div class="" [routerLink]="element.link"> </div>
                     <img src="../../{{ element.image }}" alt="">
@@ -155,7 +152,6 @@
             <p class="carousel-engine">powered by swiperjs</p>
         </div>
     </section>
-
 </main>
 
 <footer>
