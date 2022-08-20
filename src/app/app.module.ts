@@ -14,6 +14,8 @@ import { QrCodeComponentComponent } from './newbie/qr-code-component/qr-code-com
 import { NewComponentComponent } from './newbie/new-component/new-component.component';
 import { HomeComponent } from './home/home.component';
 import { BlogrLandingPageComponent } from './junior/blogr-landing-page/blogr-landing-page.component';
+import { LoaderComponent } from './toolkit/loader/loader.component';
+import { TasklistComponent } from './intermediate/tasklist/tasklist.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { BlogrLandingPageComponent } from './junior/blogr-landing-page/blogr-lan
     QrCodeComponentComponent,
     NewComponentComponent,
     HomeComponent,
-    BlogrLandingPageComponent
+    BlogrLandingPageComponent,
+    LoaderComponent,
+    TasklistComponent
   ],
   imports: [
     BrowserModule,

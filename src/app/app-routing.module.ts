@@ -14,7 +14,7 @@ import { ExpensesChartComponentComponent } from './junior/expenses-chart-compone
 import { BlogrLandingPageComponent } from './junior/blogr-landing-page/blogr-landing-page.component';
 
 // Intermediate (Level 3)
-
+import { TasklistComponent } from './intermediate/tasklist/tasklist.component';
 
 const routes: Routes = [
   
@@ -32,7 +32,7 @@ const routes: Routes = [
           {path: 'blogr-landing-page', component: BlogrLandingPageComponent},
         ]},
         {path: 'level-3', children: [
-
+          {path: 'tasklist-app', component: TasklistComponent},
         ]},
       ]
     },

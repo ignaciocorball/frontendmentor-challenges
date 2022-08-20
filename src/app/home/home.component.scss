@@ -98,7 +98,6 @@ body,html{
 }
 
 main{
-    min-height: calc(-125px + 100vh);
     margin: auto;
     margin-top: 125px;
     margin-bottom: 50px;
@@ -583,10 +582,9 @@ $spinkit-spinner-color: $color_bg !default;
     $delayRange: 0.4s;
     width: $spinkit-size;
     height: $spinkit-size;
-    margin: auto;
     position: absolute;
-    right: 5px;
-    top: 12%;
+    right: 10px;
+    top: 80px;
     .sk-cube {
       width: 33%;
       height: 33%;

@@ -2,13 +2,11 @@ import { Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@an
 import { Router } from '@angular/router';
 // import Swiper core and required modules
 import SwiperCore, { Pagination, Swiper, SwiperOptions } from "swiper";
-import { SwiperComponent } from 'swiper/angular';
 // install Swiper modules
 SwiperCore.use([Pagination]);
 // Icons
 import { faGithub, faTwitter, faCodepen, faJs, faAngular, faHtml5, faSass, faNode} from '@fortawesome/free-brands-svg-icons';
 import { faHeart, faPaintBrush, faCode } from '@fortawesome/free-solid-svg-icons';
-
  
 @Component({
   selector: 'app-home',
@@ -32,13 +30,14 @@ export class HomeComponent implements OnInit {
     {name: 'Animate.css', left:'22%', top:'120px', fs:'24px'},
   ];
 
-  // Swiper config
+  // Swiper custom pagination config
   //pagination = {
   //  clickable: true,
   //  renderBullet: function (index: number, className: string) {
   //    return '<span class="' + className + '">' + (index + 1) + "</span>";
   //  },
   //};
+
   carouselProjects: Array<any> = [
     { 
       title:'QR code component', 
@@ -57,9 +56,16 @@ export class HomeComponent implements OnInit {
     { 
       title:'Blogr landing page', 
       image:'assets/images/blogr-landing-page/guide/desktop-preview.png',
-      icon: 'fa-solid fa-credit-card-front', 
+      icon: '', 
       link:'/challenges/level-2/blogr-landing-page', 
       level:'2'
+    },
+    { 
+      title:'Magma glitched tasklist app', 
+      image:'assets/images/tasklist/guide/desktop-preview.png',
+      icon: '', 
+      link:'/challenges/level-3/tasklist-app', 
+      level:'3'
     },
   ];
   
@@ -72,23 +78,19 @@ export class HomeComponent implements OnInit {
     private elementRef: ElementRef,
     private router: Router) {  }
 
-  ngAfterViewInit(): void {
-    
-  }
+  ngAfterViewInit(): void { /* You can instance after init components here */ }
 
   ngOnInit(): void {
     this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = 'rgb(248, 248, 248)';
     this.typeMachine();
   }
 
-
   redirectTo(link: string): void {
     this.router.navigate(['/home'], { fragment: link })
   }
   scrollToBottom(): void {
-    try {
-        this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
-    } catch(err) { }                 
+    try { this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight; } 
+    catch(err) { }                 
   }
   typeMachine(): void {
     const typedText = document.querySelector(".typed-text")!;
@@ -127,17 +129,9 @@ export class HomeComponent implements OnInit {
       type();
     });
   }
-  toggleTheme(): void {
-
-  }
-
-
-
   setSwiperInstance(swiper: Swiper): void {
     setInterval(() => {
       swiper.slideNext(700);
     }, 3000);
   }
-
-
 }
