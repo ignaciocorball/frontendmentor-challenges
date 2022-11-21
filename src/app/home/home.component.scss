@@ -104,6 +104,10 @@ main{
     margin-bottom: 50px;
     width: 80%;
 
+    h1,h2,h3,h4,h5{
+        color: $color_2;
+    }
+
     .main-container{
         display: flex;
         -moz-box-align: center;
@@ -290,6 +294,7 @@ main{
         align-items: center;
         flex-wrap: wrap;
         margin-bottom: 200px;
+        gap: 3%;
         .card-skills{
             margin: 10px;
             flex: 1 1 200px;

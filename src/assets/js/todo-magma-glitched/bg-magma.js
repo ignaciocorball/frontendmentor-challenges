@@ -166,11 +166,11 @@ render();
 });
 
 /* MOUSEMOVE */
-"mousemove touchmove".split(" ").forEach((e) => {
+/*"mousemove touchmove".split(" ").forEach((e) => {
   document.addEventListener(e, function (e) {
     mouseY = e.clientY || e.touches[0].clientY;
   });
-});
+});*/
 }, 200);
 
 

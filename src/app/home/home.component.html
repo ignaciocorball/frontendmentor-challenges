@@ -1,25 +1,47 @@
 <header>
     <div class="navbar">
-        <div class="navbar-wrap">
-            <a class="logo">
+        <div class="container navbar-wrap">
+            <a href="#" class="logo">
                 <img src="../../assets/images/logo_lined.svg" alt="Arcturian dev logo" width="50">
             </a>
             <nav>
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">About me</a></li>
-                    <li><a href="javascript:void(0)" (click)="scrollToBottom()">Skillsets</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Concepts</a></li>
+                    <li><a href="home#about-me">About me</a></li>
+                    <li><a href="home#skillsets">Skillsets</a></li>
+                    <li><a href="home#projects">Projects</a></li>
+                    <li><a href="home#">Codepen</a></li>
                 </ul>
             </nav>
-            <a class="btn btn-outline-primary">Contact</a>
+            <a target="__blank" href="//linkedin.com/in/ignacio-corball-905339191/" class="btn btn-outline-primary">Contact</a>
         </div>
     </div>
 </header>
 
 <main>
-    <section class="main-container">
+    <section id="about-me" class="container main-container">
+        <div class="home-text">
+            <p>Hello, I'm</p>
+            <p class="my-2">
+                <span class="typed-text"></span>
+                <span class="machine-line blink">&nbsp;</span>
+            </p>
+            <h5>Creative front-end website developer</h5>
+            <div class="home-buttons">
+                <button class="btn-download" href="#">See projects</button>
+                <div class="home-socials">
+                    <a target="__blank" aria-label="github" title="github" href="//github.com/ignaciocorball" class="color_1">
+                        <fa-icon [icon]="faGithub" style="font-size: 1.5rem"></fa-icon>
+                    </a>
+                    <a target="__blank" aria-label="linkedin" title="linkedin" href="//linkedin.com/in/ignacio-corball-905339191/" class="color_1 ms-2">
+                        <fa-icon [icon]="faLinkedin" style="font-size: 1.5rem"></fa-icon>
+                    </a>
+                    <a target="__blank" aria-label="codepen" title="codepen" href="//codepen.io/ignaciocorball" class="color_1 ms-2">
+                        <fa-icon [icon]="faCodepen" style="font-size: 1.5rem"></fa-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
         <img class="svg-rect bounce-1"
             src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzI1IiBoZWlnaHQ9Ijk5MCIgdmlld0JveD0iMCAwIDcyNSA5OTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHg9IjY2My45NzMiIHk9Ii00NTQiIHdpZHRoPSIxMjcwLjAzIiBoZWlnaHQ9IjkzOSIgcng9IjE1IiB0cmFuc2Zvcm09InJvdGF0ZSg0NSA2NjMuOTczIC00NTQpIiBmaWxsPSJ1cmwoI3BhaW50MF9saW5lYXIpIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50MF9saW5lYXIiIHgxPSI2NjMuOTczIiB5MT0iLTQ1NCIgeDI9IjE1NTkuNjMiIHkyPSI3NTcuNDEyIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiM2QTk4RjAiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNDk2MURDIi8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPC9zdmc+Cg=="
             alt="">
@@ -34,31 +56,7 @@
             <div class='sk-cube sk-cube-8'></div>
             <div class='sk-cube sk-cube-9'></div>
         </div>
-        <div class="home-text">
-            <p>Hello, I'm</p>
-            <p class="my-2">
-                <span class="typed-text"></span>
-                <span class="machine-line blink">&nbsp;</span>
-            </p>
-            <h5>Creative front-end website developer</h5>
-            <div class="home-buttons">
-                <button class="btn-download" href="#">See projects</button>
-                <div class="home-socials">
-                    <a target="__blank" aria-label="github" title="github" href="//github.com/ignaciocorball"
-                        class="color_1">
-                        <fa-icon [icon]="faGithub" style="font-size: 1.5rem"></fa-icon>
-                    </a>
-                    <a target="__blank" aria-label="twitter" title="twitter" href="//twitter.com/ignaciocorball"
-                        class="color_1 ms-5">
-                        <fa-icon [icon]="faTwitter" style="font-size: 1.5rem"></fa-icon>
-                    </a>
-                    <a target="__blank" aria-label="codepen" title="codepen" href="//codepen.io/ignaciocorball"
-                        class="color_1 ms-5">
-                        <fa-icon [icon]="faCodepen" style="font-size: 1.5rem"></fa-icon>
-                    </a>
-                </div>
-            </div>
-        </div>
+
         <div class="home-card">
             <div class="card-body">
                 <pre>1&nbsp;&nbsp;class <b>Portfolio</b> <!-- -->{{ '{' }} </pre>
@@ -80,7 +78,7 @@
         </div>
     </section>
 
-    <section class="things-i-love">
+    <section class="container things-i-love">
         <h2 class="title-2">Things I love <fa-icon [icon]="faHeart" style="font-size: 1.5rem; color: #F43962"></fa-icon>
         </h2>
         <div class="card-holder">
@@ -111,7 +109,7 @@
         </div>
     </section>
 
-    <section class="skillset">
+    <section id="skillsets" class="container skillset">
         <h2>Project Skillsets</h2>
         <div class="skill-icons">
             <fa-icon [icon]="faAngular"></fa-icon>
@@ -127,9 +125,8 @@
         </div>
     </section>
 
-    <section class="carousel">
+    <section id="projects" class="carousel">
         <div class="carousel-bg"></div>
-
         <div class="carousel-container">
             <!-- Swiper attributes -->
             <!-- [pagination]="pagination" -->
@@ -152,8 +149,46 @@
             <p class="carousel-engine">powered by swiperjs</p>
         </div>
     </section>
+
+    <section id="codepen">
+        <div class="container-waves">
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+            <div class="wave wave4"></div>
+        </div>
+        <div class="container">
+            <div class="projects mt-4 text-center">
+                <h2 class="title-2">Codepen Components</h2>
+                <div class="project my-4 ">
+                    <div class="project-text my-4">
+                        <h5 class="fw-bold">Glitched Text Animation</h5>
+                    </div>
+                    <iframe src="https://codepen.io/ignaciocorball/embed/ZExZbLa" frameborder="0" width="80%" height="300px" data-zoom="0.5"></iframe>
+                </div>
+                <div class="project my-4">
+                    <div class="project-text my-4">
+                        <h5 class="fw-bold">Moon & Sun switch</h5>
+                    </div>
+                    <iframe src="https://codepen.io/ignaciocorball/embed/wvmYRGV" frameborder="0" width="80%" height="300px" data-zoom="0.5"></iframe>
+                </div>
+                <div class="project my-4">
+                    <div class="project-text my-4">
+                        <h5 class="fw-bold">Inputs custom color animation</h5>
+                    </div>
+                    <iframe src="https://codepen.io/ignaciocorball/embed/LYQMKYd" frameborder="0" width="80%" height="340px" data-zoom="0.5"></iframe>
+                </div>
+                <div class="project my-4">
+                    <div class="project-text my-4">
+                        <h5 class="fw-bold">Cards Hover Animation</h5>
+                    </div>
+                    <iframe src="https://codepen.io/ignaciocorball/embed/KKQbjGm" frameborder="0" width="80%" height="460px" data-zoom="0.5"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
 
 <footer>
-
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 </footer>

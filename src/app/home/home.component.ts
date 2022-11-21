@@ -5,7 +5,7 @@ import SwiperCore, { Pagination, Swiper, SwiperOptions } from "swiper";
 // install Swiper modules
 SwiperCore.use([Pagination]);
 // Icons
-import { faGithub, faTwitter, faCodepen, faJs, faAngular, faHtml5, faSass, faNode} from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faTwitter, faCodepen, faJs, faAngular, faHtml5, faSass, faNode, faLinkedin} from '@fortawesome/free-brands-svg-icons';
 import { faHeart, faPaintBrush, faCode } from '@fortawesome/free-solid-svg-icons';
  
 @Component({
@@ -68,9 +68,18 @@ export class HomeComponent implements OnInit {
       level:'3'
     },
   ];
+
+  codepenComponents: Array<any> = [
+    {
+      title: 'Glitched Text Animation',
+      description: 'A Glitched Text Animation with a custom design.',
+      link: '',
+      height: '300px',
+    },
+  ];
   
   // Icons
-  faGithub = faGithub; faTwitter = faTwitter; faCodepen = faCodepen; faHeart = faHeart;
+  faGithub = faGithub; faTwitter = faTwitter; faCodepen = faCodepen; faHeart = faHeart; faLinkedin = faLinkedin;
   faCode = faCode; faJs = faJs; faPaintBrush = faPaintBrush; faAngular = faAngular;
   faHtml5 = faHtml5; faSass = faSass; faNode = faNode;
 

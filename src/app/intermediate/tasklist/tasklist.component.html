@@ -1,27 +1,41 @@
 <section class="d-grid place-items-center">
-    <canvas id="canvas"></canvas>
-    <div class="iphone-x">
+    <canvas id="canvas" class="animate__animated animate__fadeIn"></canvas>
+    <div class="iphone-x animate__animated fadeIn animate__delay-2s">
         <i class="object">Speaker</i>
         <b class="object">Camera</b>
         <s class="object"></s>
         <div class="iphone-screen">
-            <div class="view-0 view-hide">
-                <div id="particles-div"></div>
+            <div class="view-0 d-none" id="view-0">
                 <div class="info-container">
+                    <div id="particles-js"></div>
                     <img class="statusbar" src="../../../assets/images/tasklist/status-bar-white.png" alt="">
-                    <div class="go-back"><i class="fas fa-angle-left"></i></div>
+                    <div (click)="goHome()" class="go-back d-grid justify-content-center align-items-center">
+                        <i class="fas fa-angle-left"></i>
+                    </div>
                     <div class="profile-container">
                         <img src="../../../assets/images/tasklist/logo.png" alt="profile photo" class="profile-photo">
-                        <a>Joy Mitchel</a>
+                        <a>Neil Armstrong</a>
                         <ul>
-                            <li class="home-btn"><i class="fas fa-home" style="font-size: 1.5rem"></i> Home</li>
-                            <li class="templates-btn"><i class="fas fa-cards-blank" style="font-size: 1.5rem"></i>
-                                Templates</li>
-                            <li class="categories-btn"><i class="fas fa-grid-2" style="font-size: 1.5rem"></i>Categories
+                            <li class="home-btn">
+                                <i class="fa-duotone fa-objects-column"></i>
+                                <h5>Home</h5>
                             </li>
-                            <li class="analytics-btn"><i class="fas fa-chart-pie-simple"
-                                    style="font-size: 1.5rem"></i>Analytics</li>
-                            <li class="settings-btn"><i class="fas fa-gear" style="font-size: 1.5rem"></i>Settings</li>
+                            <li class="templates-btn">
+                                <i class="fa-duotone fa-file-contract"></i>
+                                <h5>Templates</h5>
+                            </li>
+                            <li class="categories-btn">
+                                <i class="fa-duotone fa-grid-2"></i>
+                                <h5>Categories</h5>
+                            </li>
+                            <li class="analytics-btn">
+                                <i class="fa-duotone fa-chart-pie-simple"></i>
+                                <h5>Analytics</h5>
+                            </li>
+                            <li class="settings-btn">
+                                <i class="fa-duotone fa-gears"></i>
+                                <h5>Settings</h5>
+                            </li>
                         </ul>
                         <div class="line-chart">
                             <div class="aspect-ratio">
@@ -33,10 +47,10 @@
                     </div>
                 </div>
             </div>
-            <div class="view-1 view-show">
+            <div class="view-1 d-block" id="view-1">
                 <img class="statusbar" src="../../../assets/images/tasklist/status-bar-white.png" alt="">
                 <div class="header-container d-flex justify-content-between">
-                    <div class="dashboard">
+                    <div (click)="goDashboard()" class="dashboard">
                         <i class="far fa-bars"></i>
                     </div>
                     <div class="extras-container d-flex flex-row-reverse">
@@ -49,12 +63,12 @@
                     </div>
                 </div>
                 <div class="main-container">
+                    <div class="title">
+                        <h3 class="glitch">What's up, Joy!</h3>
+                    </div>
+                    <h4 class="subtitle pt-4">CATEGORIES</h4>
                     <div class="categories-container">
-                        <div class="tittle">
-                            <h1 class="glitch" data-text="What's up, Joy!">What's up, Joy!</h1>
-                        </div>
                         <div class="slider">
-                            <h4 class="subtitle py-2">CATEGORIES</h4>
                             <div class="slider-inner">
                                 <div class="item card-active">
                                     <h5 class="tasks-number">12 tasks</h5>
@@ -83,129 +97,41 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tasks-container pt-5">
-                        <h4 class="py-2">TODAY'S TASKS</h4>
+                    <h4 class="py-2">TODAY'S TASKS</h4>
+                    <div class="tasks-container">
                         <div class="task-cards">
                             <ul>
-                                <li (click)="cardselect(1)" id="1029452"
-                                    class="d-flex justify-content-around align-items-center">
+                                <li class="d-flex justify-content-around align-items-center"
+                                    *ngFor="let element of tasks" (click)="cardselect(element.id)" id="{{element.id}}">
                                     <div class="card-categories">
                                         <div class="card__side card__side--front">
-                                            <div class="checkbox">
-                                                <i class="far fa-circle-check circle-unchecked"></i>
-                                            </div>
-                                            <div class="task-tittle">
-                                                <h3>Create new template</h3>
+                                            <div class="card-front-container">
+                                                <div class="checkbox">
+                                                    <i class="fa-circle-check"
+                                                    [ngClass]="{ 
+                                                        'fas chk-checked':element.status==='completed', 
+                                                        'far chk-unchecked':element.status==='pending'
+                                                    }">
+                                                    </i>
+                                                    <div class="task-title">
+                                                        <h3 [ngClass]="{'title-tashed':element.status==='completed'}">
+                                                            {{element.title}}
+                                                        </h3>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="card__side card__side--back">
                                             <div class="card-back-container">
                                                 <div class="checkbox">
-                                                    <i class="far fa-circle-check circle-checked"></i>
+                                                    <i class="far fa-circle-check chk-checked"></i>
+                                                    <div class="task-undo">
+                                                        <i class="fa-duotone fa-arrow-rotate-left"></i>
+                                                        <h3 class="my-auto">UNDO</h3>
+                                                    </div>
                                                 </div>
-                                                <div class="task-undo">
-                                                    <h3>UNDO</h3>
-                                                </div>
-    
+                                                <div class="card-timeout"></div>
                                             </div>
-                                            <div class="card-timeout"></div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li (click)="cardselect(1)" id="1049562"
-                                    class="d-flex justify-content-around align-items-center">
-                                    <div class="card-categories">
-                                        <div class="card__side card__side--front">
-                                            <div class="checkbox">
-                                                <i class="fas fa-circle-check circle-checked"></i>
-                                            </div>
-                                            <div class="task-tittle tittle-tashed">
-                                                <h3>Pay for rent</h3>
-                                            </div>
-                                        </div>
-                                        <div class="card__side card__side--back">
-                                            <div class="card-back-container">
-                                                <div class="checkbox">
-                                                    <i class="fas fa-circle-check circle-checked"></i>
-                                                </div>
-                                                <div class="task-undo">
-                                                    <h3>UNDO</h3>
-                                                </div>
-    
-                                            </div>
-                                            <div class="card-timeout"></div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li (click)="cardselect(1)" id="1025567"
-                                    class="d-flex justify-content-around align-items-center">
-                                    <div class="card-categories">
-                                        <div class="card__side card__side--front">
-                                            <div class="checkbox">
-                                                <i class="far fa-circle-check circle-unchecked"></i>
-                                            </div>
-                                            <div class="task-tittle">
-                                                <h3>Check emails</h3>
-                                            </div>
-                                        </div>
-                                        <div class="card__side card__side--back">
-                                            <div class="card-back-container">
-                                                <div class="checkbox">
-                                                    <i class="far fa-circle-check circle-checked"></i>
-                                                </div>
-                                                <div class="task-undo">
-                                                    <h3>UNDO</h3>
-                                                </div>
-                                            </div>
-                                            <div class="card-timeout"></div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li (click)="cardselect(1)" id="1155557"
-                                    class="d-flex justify-content-around align-items-center">
-                                    <div class="card-categories">
-                                        <div class="card__side card__side--front">
-                                            <div class="checkbox">
-                                                <i class="far fa-circle-check circle-unchecked"></i>
-                                            </div>
-                                            <div class="task-tittle">
-                                                <h3>Lunch with Emma</h3>
-                                            </div>
-                                        </div>
-                                        <div class="card__side card__side--back">
-                                            <div class="card-back-container">
-                                                <div class="checkbox">
-                                                    <i class="far fa-circle-check circle-checked"></i>
-                                                </div>
-                                                <div class="task-undo">
-                                                    <h3>UNDO</h3>
-                                                </div>
-                                            </div>
-                                            <div class="card-timeout"></div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li (click)="cardselect(1)" id="1012444"
-                                    class="d-flex justify-content-around align-items-center">
-                                    <div class="card-categories">
-                                        <div class="card__side card__side--front">
-                                            <div class="checkbox">
-                                                <i class="far fa-circle-check circle-unchecked"></i>
-                                            </div>
-                                            <div class="task-tittle">
-                                                <h3>Meditation</h3>
-                                            </div>
-                                        </div>
-                                        <div class="card__side card__side--back">
-                                            <div class="card-back-container">
-                                                <div class="checkbox">
-                                                    <i class="far fa-circle-check circle-checked"></i>
-                                                </div>
-                                                <div class="task-undo">
-                                                    <h3>UNDO</h3>
-                                                </div>
-                                            </div>
-                                            <div class="card-timeout"></div>
                                         </div>
                                     </div>
                                 </li>
@@ -217,18 +143,21 @@
                     <i class="fa-solid fa-plus"></i>
                 </span>
             </div>
-            <div class="view-2 view-hide">
+            <div class="view-2 d-none">
 
             </div>
-            <div class="view-3 view-hide">
+            <div class="view-3 d-none">
 
             </div>
-            <div class="view-4 view-hide">
+            <div class="view-4 d-none">
 
             </div>
-            <div class="view-5 view-hide">
+            <div class="view-5 d-none">
 
             </div>
         </div>
+    </div>
+    <div class="attribution px-5 w-100 animate__animated animate__fadeIn animate__delay-1s" id="attribution">
+        <span class="fw-bold">Tasklist magma glitched</span>. Coded by <a href="https://github.com/ignaciocorball/frontendmentor-challenges">Arcturian.dev</a>.
     </div>
 </section>
