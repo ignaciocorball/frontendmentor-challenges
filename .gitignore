@@ -1,5 +1,13 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+# Firebase
+firebase-debug.log
+/.firebase
+.firebaserc
+firebase.json
+/.github
+
+
 # compiled output
 /dist
 /tmp
