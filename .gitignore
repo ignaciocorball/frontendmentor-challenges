@@ -2,10 +2,10 @@
 
 # Firebase
 firebase-debug.log
-/.firebase
+.firebase
 .firebaserc
 firebase.json
-/.github
+.github
 
 
 # compiled output
