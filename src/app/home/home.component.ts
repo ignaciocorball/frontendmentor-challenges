@@ -1,8 +1,9 @@
 import { Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
-// import Swiper core and required modules
+import { NgxSpinnerService } from "ngx-spinner";
+// Swiper core and required modules
 import SwiperCore, { Pagination, Swiper, SwiperOptions } from "swiper";
-// install Swiper modules
+// Swiper modules
 SwiperCore.use([Pagination]);
 // Icons
 import { faGithub, faTwitter, faCodepen, faJs, faAngular, faHtml5, faSass, faNode, faLinkedin} from '@fortawesome/free-brands-svg-icons';
@@ -85,9 +86,17 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private elementRef: ElementRef,
-    private router: Router) {  }
+    private router: Router,
+    private spinner: NgxSpinnerService) { 
+    // Spinner starts on init
+    this.spinner.show();
+  }
 
-  ngAfterViewInit(): void { /* You can instance after init components here */ }
+  ngAfterViewInit(): void { 
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 1500);
+   }
 
   ngOnInit(): void {
     this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = 'rgb(248, 248, 248)';
@@ -97,10 +106,12 @@ export class HomeComponent implements OnInit {
   redirectTo(link: string): void {
     this.router.navigate(['/home'], { fragment: link })
   }
+
   scrollToBottom(): void {
     try { this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight; } 
     catch(err) { }                 
   }
+
   typeMachine(): void {
     const typedText = document.querySelector(".typed-text")!;
     const cursor = document.querySelector(".machine-line")!;
@@ -138,6 +149,7 @@ export class HomeComponent implements OnInit {
       type();
     });
   }
+
   setSwiperInstance(swiper: Swiper): void {
     setInterval(() => {
       swiper.slideNext(700);
